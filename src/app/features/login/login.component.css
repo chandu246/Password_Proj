@@ -1,10 +1,13 @@
 .toolbar {
-  background-color: #1c355b;
-  flex: 1 1 auto;
+  background-color: #FFFFFF;
+  border-bottom: 3px solid #42586C;
+  border-bottom-width: 3px;
+  border-bottom-style: solid;
+  border-bottom-color: rgb(219, 217, 210);
 }
 
 .toolbar-text {
-  color: #f2f4f7;
-  font-family: sans-serif;
-  font-weight: 550px;
+  color: #1c355b;
+  font-family: 'Merienda-Bold', sans-serif;
+  font-weight: 700;
 }

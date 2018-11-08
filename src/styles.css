@@ -1,1 +1,26 @@
-/* You can add global styles to this file, and also import other style files */
+@font-face {
+  font-family: 'Merienda-Bold';
+  src: url('assets/fonts/Merienda-Bold.ttf');
+}
+
+@font-face {
+  font-family: 'Merienda-Regular';
+  src: url('assets/fonts/Merienda-Regular.ttf');
+}
+
+.main-background {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: #f6f6f4;
+}
+
+* {
+  -webkit-appearance: none;
+}
+
+html {
+  height: 100%;
+}
