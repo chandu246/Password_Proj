@@ -1,5 +1,6 @@
 import {NgModule} from "@angular/core";
 import { CommonModule } from '@angular/common';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {
   MatButtonModule, MatCardModule, MatDialogModule, MatInputModule, MatTableModule,
   MatToolbarModule, MatMenuModule,MatIconModule, MatProgressSpinnerModule
@@ -15,7 +16,9 @@ import {
   MatTableModule,
   MatMenuModule,
   MatIconModule,
-  MatProgressSpinnerModule
+  MatProgressSpinnerModule,
+  FormsModule,
+  ReactiveFormsModule
   ],
   exports: [
   CommonModule,
@@ -27,7 +30,9 @@ import {
    MatTableModule,
    MatMenuModule,
    MatIconModule,
-   MatProgressSpinnerModule
+   MatProgressSpinnerModule,
+   FormsModule,
+   ReactiveFormsModule,
    ],
 })
 export class CustomMaterialModule { }

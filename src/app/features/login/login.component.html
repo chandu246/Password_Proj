@@ -1,5 +1,62 @@
+
 <mat-toolbar class="toolbar">
 <mat-toolbar-row class="toolbar-text">
-<img style="margin-right:10px;" src="assets/images/lock.svg">
-<span>Password Vault</span>
+  <span class="heading">
+    <img src="assets/images/lock.svg">
+    <span>Password Vault</span>
+  </span>
  </mat-toolbar-row>
+</mat-toolbar>
+<!-- <form>
+  <div class="group">
+    <input type="email"><span class="highlight"></span><span class="bar"></span>
+    <label>Email</label>
+  </div>
+  <div class="group">
+    <input type="text"><span class="highlight"></span><span class="bar"></span>
+    <label>Password</label>
+  </div>
+  <button type="button" class="button buttonBlue">Log In
+  </button>
+</form> -->
+
+
+<div class="page-container">
+  <div *ngIf="showLoginForm()" class="login-container">
+    <form [formGroup]="loginForm" class="login-form" novalidate>
+
+      <div class="form-group">
+        <div class="ph-input input-group">
+          <label>Username</label>
+          <input type="email" placeholder="" formControlName="username" maxlength="50">
+          <span class="bar"></span>
+          <div *ngIf="loginForm.controls.username.errors && loginForm.controls.username.touched"
+               class="form-errors">
+            <span [hidden]="!loginForm.controls.username.errors.required">Username is required</span>
+            <span [hidden]="!loginForm.controls.username.errors.pattern">Invalid Username</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="ph-input input-group">
+          <label>Password</label>
+          <input type="password" placeholder="" formControlName="password" maxlength="50">
+          <span class="bar"></span>
+          <div *ngIf="loginForm.controls.password.errors && loginForm.controls.password.touched"
+               class="form-errors">
+            <span [hidden]="!loginForm.controls.password.errors.required">Password is required</span>
+            <span [hidden]="!loginForm.controls.password.errors.pattern">Invalid Password</span>
+          </div>
+        </div>
+      </div>
+      <div *ngIf="error.length > 0" class="error-container">
+        {{error}}
+      </div>
+      <div>
+        <button type="button" class="button buttonBlue" type="submit" [disabled]="!loginForm.valid">Log In
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

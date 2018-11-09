@@ -1,3 +1,11 @@
+:host {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .toolbar {
   background-color: #FFFFFF;
   border-bottom: 3px solid #42586C;
@@ -7,7 +15,236 @@
 }
 
 .toolbar-text {
+  display: flex;
+  flex-direction: column;
   color: #1c355b;
   font-family: 'Merienda-Bold', sans-serif;
   font-weight: 700;
+  align-items: center;
+  align-content: center;
+}
+
+.heading {
+  display: flex;
+  margin: auto;
+  font-size: x-large;
+}
+
+* {
+  box-sizing:border-box;
+ }
+
+ body {
+  -webkit-font-smoothing: antialiased;
+}
+
+form {
+	width: 380px;
+	margin: 4em auto;
+	padding: 3em 2em 2em 2em;
+	/* background: #fafafa;
+	border: 1px solid #ebebeb;
+	box-shadow: rgba(0,0,0,0.14902) 0px 1px 1px 0px,rgba(0,0,0,0.09804) 0px 1px 2px 0px; */
+}
+
+.group {
+	position: relative;
+	margin-bottom: 45px;
+}
+
+input {
+	font-size: 18px;
+  font-family: 'Roboto', sans-serif;
+	padding: 10px 10px 10px 5px;
+	-webkit-appearance: none;
+	display: block;
+  background-color: #f6f6f4;
+	color: #42586C;
+	width: 100%;
+	border: none;
+	border-radius: 0;
+	border-bottom: 1px solid #42586C;
+}
+
+input:focus { outline: none; }
+
+
+/* Label */
+
+label {
+  font-family: 'Merienda-Bold', sans-serif;
+	color: #999;
+	font-size: 18px;
+	position: absolute;
+	pointer-events: none;
+	left: 5px;
+	top: 10px;
+	transition: all 0.2s ease;
+}
+
+
+/* active */
+
+input:focus ~ label {
+	top: -20px;
+  transform: scale(.75); left: -2px;
+	color: #42586C;
+}
+
+
+/* Underline */
+
+.bar {
+	position: relative;
+	display: block;
+	width: 100%;
+}
+
+.bar:before, .bar:after {
+	content: '';
+	height: 2px;
+	width: 0;
+	bottom: 1px;
+	position: absolute;
+	background: #42586C;
+	transition: all 0.2s ease;
+}
+
+.bar:before { left: 50%; }
+
+.bar:after { right: 50%; }
+
+
+/* active */
+
+input:focus ~ .bar:before, input:focus ~ .bar:after { width: 50%; }
+
+
+/* Highlight */
+
+.highlight {
+	position: absolute;
+	height: 60%;
+	width: 100px;
+	top: 25%;
+	left: 0;
+	pointer-events: none;
+	opacity: 0.5;
+}
+
+
+/* active */
+
+input:focus ~ .highlight {
+	animation: inputHighlighter 0.3s ease;
+}
+
+
+/* Animations */
+
+@keyframes inputHighlighter {
+	from { background: #42586C; }
+	to 	{ width: 0; background: transparent; }
+}
+
+
+/* Button */
+
+.button {
+  font-family: 'Merienda-Bold', sans-serif;
+  font-size: 18px;
+  position: relative;
+  display: inline-block;
+  padding: 12px 24px;
+  margin: .3em 0 1em 0;
+  width: 100%;
+  vertical-align: middle;
+  font-size: 16px;
+  line-height: 20px;
+  -webkit-font-smoothing: antialiased;
+  text-align: center;
+  letter-spacing: 1px;
+  background: transparent;
+  border: 2px solid #42586C;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+.button:focus { outline: 0; }
+
+
+/* Button modifiers */
+
+.buttonBlue {
+
+  text-shadow: 1px 1px 0 rgba(39, 110, 204, .5);
+}
+
+.buttonBlue:hover { background: #42586C; }
+
+
+
+
+
+
+
+
+
+
+
+
+img.background {
+  max-width: 250px;
+  max-height: 100%;
+}
+
+@media screen and (min-width: 600px) {
+  img.background {
+    max-width: 100%;
+    max-height: 100%;
+  }
+}
+
+:host > * {
+  width: 100%;
+}
+
+.page-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.login-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-form > * {
+  padding: 20px 0;
+}
+
+.form-group {
+  display       : flex;
+  flex-wrap     : wrap;
+  flex-direction: row;
+  margin-top    : 10px;
+}
+
+.ph-input label {
+  position: static;
+}
+
+.error-container {
+  color: red;
+}
+
+.input-group {
+  width: 100%;
+}
+
+.form-errors {
+  font-family: 'Merienda-Regular', sans-serif;
+
 }
