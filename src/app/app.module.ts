@@ -5,12 +5,14 @@ import { CustomMaterialModule } from './core/material.module';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './features/login/login.component';
+import { DashboardComponent } from './features/dashboard/dashboard.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent
+    LoginComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
